@@ -1,0 +1,296 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #012a33, #046b75);
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Card Styling - Glassmorphism */
+.card {
+    background: rgba(28, 180, 197, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(12, 204, 198, 0.3);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(12, 204, 198, 0.5);
+}
+
+/* Ensuring Equal Height for Specific Card Pairs */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensures full height usage */
+}
+
+.profile-card, 
+.card-body.border-info {
+    min-height: 100%; /* Ensures Profile & Journey cards match height */
+}
+
+.spaced-card {
+    min-height: 100%; /* Ensures Experience & Skills, Resume & Contact match */
+}
+
+@media (min-width: 768px) {
+    .col-md-4, .col-md-8, .col-md-6, .col-md-12 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Typing Effect */
+.typing-text {
+    font-size: 24px;
+    font-style: bold;
+    font-weight: bold;
+    color: #000000;
+    display: inline-block;
+    border-right: 3px solid #ffeb3b;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: typing 3s steps(40, end) forwards, blink-caret 0.6s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Social Links - Neon Glow Effect */
+.social-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.social:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
+/* Smooth Fade-in Animation */
+.fade-in-text {
+    opacity: 0;
+    transform: translateY(10px);
+    font-style: bold;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design Tweaks */
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 18px;
+    }
+
+    .social {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #ff6b6b;
+}
+/* Navbar Styles */
+.navbar {
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #c70aca;
+    position: relative;
+    z-index: 100;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    color: #f622b3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 10px rgba(255, 107, 107, 0.9), 
+                 0px 0px 5px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand strong {
+    color: #ff6b6b; /* Highlighted part */
+    text-shadow: 3px 3px 15px rgba(255, 107, 107, 1);
+}
+
+.navbar-brand:hover {
+    color: #f4a261;
+    text-shadow: 3px 3px 20px rgba(255, 165, 79, 1);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-item {
+    margin: 0 12px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #d1d1d1;
+    transition: all 0.3s ease-in-out;
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6b6b;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(255, 107, 107, 0.6);
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: 2px solid #ff6b6b;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #d9b9b9;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.5);
+    border-top: 3px solid #ff6b6b;
+    position: relative;
+    z-index: 10;
+}
+
+/* Footer Title */
+.footer-title {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 10px rgba(107, 255, 225, 0.9);
+}
+
+/* Footer Text */
+.footer p {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 22px;
+    color: #ff6b6b;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    color: #f4a261;
+    transform: scale(1.2);
+    text-shadow: 0px 0px 10px rgba(255, 107, 107, 0.8);
+}
+
+/* Footer Copyright Text */
+.footer-text {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* For Engibe logo */
+
+/* Centering and Styling the Image */
+.innovation-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.innovation-image img {
+    width: 200px; /* Adjust as needed */
+    height: 200px;
+    
+    
+}
+
